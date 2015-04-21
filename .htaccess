@@ -1,0 +1,3 @@
+RewriteEngine on   
+RewriteCond $1 !^(index\.php|img|js|css|font|robots\.txt)   
+RewriteRule ^(.*)$ /DefaultWorkspace10/Template/index.php/$1 [L]
