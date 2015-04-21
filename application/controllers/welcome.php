@@ -26,6 +26,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/tp_main_container');
 		$this->load->view('template/tp_footer');
 	}
+	public function signin(){
+		$this->load->helper('url');
+		$this->load->view('template/tp_header');
+		$this->load->view('user/signin');
+		$this->load->view('template/tp_footer');
+	}
 }
 
 /* End of file welcome.php */

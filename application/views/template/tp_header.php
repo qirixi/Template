@@ -22,6 +22,9 @@
     <!-- this page specific styles -->
     <link rel="stylesheet" href="<?php echo base_url();?>css/compiled/index.css" type="text/css" media="screen" />    
 
+     <!-- this page specific styles -->
+    <link rel="stylesheet" href="<?php echo base_url();?>css/compiled/signin.css" type="text/css" media="screen" />
+    
     <!-- open sans font -->
     <link href="<?php echo base_url();?>css/font/lato.css" rel='stylesheet' type='text/css' />
 
