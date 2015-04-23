@@ -48,5 +48,28 @@
     <script src="<?php echo base_url();?>js/jquery.flot.resize.js"></script>
     <script src="<?php echo base_url();?>js/theme.js"></script>
 	
+	<?php 
+	if(isset($css_list)){
+		if(is_array($css_list)){
+			foreach ($css_list as $row){
+				echo "<link rel=\"stylesheet\" href= \"".base_url()."css/".$row."\">";
+			}
+		}else{
+			echo "<link rel=\"stylesheet\" href= \"".base_url()."css/".$css_list."\">";
+		}
+	}
+
+	if(isset($js_list)){
+		if(is_array($js_list)){
+			foreach ($js_list as $row){
+				echo "<script src= \"".base_url()."js/".$row."\"></script>";			
+			}
+		}else{
+			echo "<script src= \"".base_url()."js/".$js_list."\"></script>";
+		}
+	}
+
+?>
+	
 </head>
 <body>

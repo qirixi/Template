@@ -34,21 +34,24 @@
         <div class="span4 box">
             <div class="content-wrap">
                 <h6>Log in</h6>
-                <input class="span12" type="text" placeholder="E-mail address" />
-                <input class="span12" type="password" placeholder="Your password" />
-                <a href="#" class="forgot">Forgot password?</a>
+                <?php echo form_open('user/login') ?>
+                <input id="username" name="username" class="span12" type="text" placeholder="用户名" />
+                <input id="passwd" name="passwd" class="span12" type="password" placeholder="密码" />
+                <!-- <a href="#" class="forgot">Forgot password?</a> -->
                 <div class="remember">
-                    <input id="remember-me" type="checkbox" />
-                    <label for="remember-me">Remember me</label>
+                    <input id="remember_me" type="checkbox" />
+                    <label for="remember_me">Remember me</label>
                 </div>
-                <a class="btn-glow primary login" href="index.html">Log in</a>
+         
+                <input class="btn-glow primary login" type="submit" name="submit" value="Log in" /> 
+                </form>
             </div>
         </div>
 
-        <div class="span4 no-account">
+        <!-- <div class="span4 no-account">
             <p>Don't have an account?</p>
             <a href="signup.html">Sign up</a>
-        </div>
+        </div> -->
     </div>
 
 
@@ -68,6 +71,24 @@
                 $("html").css("background-image", "url('<?php echo base_url();?>img/bgs/" + bg + "')");
                
             });
+
+           
+    		var COOKIE_NAME = 'username';
+    		var PASSWORD = 'password';
+    		if($.cookie(COOKIE_NAME)){
+    			$("#username").val($.cookie(COOKIE_NAME));
+    			$("#passwd").val($.cookie(PASSWORD));
+    		}
+    		$("#remember_me").click(function(){
+    			if($(this).is(':checked')){
+    				$.cookie(COOKIE_NAME, $("#username").val() , { path: '/', expires: 10 });  
+    				$.cookie(PASSWORD, $("#passwd").val() , { path: '/', expires: 10 }); 
+    			}else{
+    				$.cookie(COOKIE_NAME, null, { path: '/' });  //删除cookie  
+    				$.cookie(PASSWORD, null, { path: '/' });  //删除cookie  
+    			}
+    		});
+    	
 
         });
     </script>

@@ -116,7 +116,7 @@
                     </a>
                 </li>
                 <li class="settings hidden-phone">
-                    <a href="signin.html" role="button">
+                    <a href="<?php echo base_url();?>user/logout" role="button">
                         <i class="icon-share-alt"></i>
                     </a>
                 </li>

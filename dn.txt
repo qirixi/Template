@@ -1,0 +1,8 @@
+create database template;
+use template;
+
+create table user (
+username varchar(16) not null primary key,
+department varchar(64) not null,
+passwd char(16) not null,
+competence varchar(1) NOT NULL)default character set utf8;
