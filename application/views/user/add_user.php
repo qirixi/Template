@@ -41,22 +41,32 @@
                                     </div>
                                 </div>
                                 <div class="span12 field-box">
-                                    <label>Company:</label>
+                                    <label>角色:</label>
+                                    <div class="ui-select span5">
+                                        <select>
+                                            <option value="AK" />普通用户
+                                            <option value="HI" />部门主管
+                                            <option value="CA" />系统管理员
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="span12 field-box">
+                                    <label>姓名:</label>
                                     <input class="span9" type="text" />
                                 </div>
                                 <div class="span12 field-box">
-                                    <label>Email:</label>
+                                    <label>电话:</label>
                                     <input class="span9" type="text" />
                                 </div>
                                 <div class="span12 field-box">
-                                    <label>Phone:</label>
+                                    <label>密码:</label>
                                     <input class="span9" type="text" />
                                 </div>
                                 <div class="span12 field-box">
-                                    <label>Website:</label>
+                                    <label>重复密码:</label>
                                     <input class="span9" type="text" />
                                 </div>
-                                <div class="span12 field-box">
+                                <!-- <div class="span12 field-box">
                                     <label>Address:</label>
                                     <div class="address-fields">
                                         <input class="span12" type="text" placeholder="Street address" />
@@ -69,7 +79,7 @@
                                     <label>Notes:</label>
                                     <textarea class="span9"></textarea>
                                     <span class="charactersleft">90 characters remaining. Field limited to 100 characters</span>
-                                </div>
+                                </div> -->
                                 <div class="span11 field-box actions">
                                     <input type="button" class="btn-glow primary" value="Create user" />
                                     <span>OR</span>
@@ -103,3 +113,24 @@
         </div>
     </div>
     <!-- end main container -->
+    
+    <script type="text/javascript">
+        $(function () {
+
+            // toggle form between inline and normal inputs
+            var $buttons = $(".toggle-inputs button");
+            var $form = $("form.new_user_form");
+
+            $buttons.click(function () {
+                var mode = $(this).data("input");
+                $buttons.removeClass("active");
+                $(this).addClass("active");
+
+                if (mode === "inline") {
+                    $form.addClass("inline-input");
+                } else {
+                    $form.removeClass("inline-input");
+                }
+            });
+        });
+    </script>

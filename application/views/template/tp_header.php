@@ -4,7 +4,7 @@
 	<title>Detail Admin - Home</title>
     
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
     <!-- bootstrap -->
     <link href="<?php echo base_url();?>css/bootstrap/bootstrap.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
@@ -18,13 +18,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/layout.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/elements.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/icons.css" />
-
-    <!-- this page specific styles -->
-    <link rel="stylesheet" href="<?php echo base_url();?>css/compiled/index.css" type="text/css" media="screen" />    
-
-     <!-- this page specific styles -->
-    <link rel="stylesheet" href="<?php echo base_url();?>css/compiled/signin.css" type="text/css" media="screen" />
-    
+  
+     
     <!-- open sans font -->
     <link href="<?php echo base_url();?>css/font/lato.css" rel='stylesheet' type='text/css' />
 

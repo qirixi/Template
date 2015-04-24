@@ -2,7 +2,7 @@
     <div id="sidebar-nav">
         <ul id="dashboard-menu">
             <li id="home">
-                <a href="index.html">
+                <a href="<?php echo base_url();?>user/success">
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
@@ -20,9 +20,9 @@
                     <i class="icon-chevron-down"></i>
                 </a>
                 <ul class="submenu">
-                    <li id="user_list"><a href="user-list.html">User list</a></li>
+                    <li id="user_list"><a href="<?php echo base_url();?>user/display_user_list">User list</a></li>
                     <li id="new_user"><a href="<?php echo base_url();?>user/add_user">New user form</a></li>
-                    <li id="user_profile"><a href="user-profile.html">User profile</a></li>
+                    <li id="user_profile"><a href="<?php echo base_url();?>user/user_profile">User profile</a></li>
                 </ul>
             </li>
             <li id="forms">
@@ -95,6 +95,8 @@
 			var $parent_li = $active_li.parents('li');
 			if($parent_li.length>0){
 				$active_li.parents('ul').css("display","block");
+				$active_li.parents('ul').addClass('active');
+				$active_li.children("a").addClass('active');
 				$parent_li.addClass("active");
 				$parent_li.prepend("<div class=\"pointer\"><div class=\"arrow\"></div><div class=\"arrow_border\"></div></div>");
 			}else{

@@ -35,6 +35,23 @@ class User extends CI_Controller{
 			
 		
 	}
+	public function user_profile(){
+		$this->load->helper("url");
+		if($_SESSION['is_admin']!=="1"){
+			return;
+		}
+		
+		$data['title'] = 'User profile';
+		$data['active_item']='user_profile';
+		$data['css_list'] = array("compiled/user-profile.css","font/open_sans.css");
+		
+		
+		$this->load->view('template/tp_header',$data);
+		$this->load->view('template/tp_navbar');
+		$this->load->view('template/tp_sidebar',$data);
+		$this->load->view('user/user_profile');
+		$this->load->view('template/tp_footer');
+	}
 	/*
 	public function delete_user($username){
 		$this->load->helper('url');
@@ -63,6 +80,7 @@ class User extends CI_Controller{
 		$this->load->library('form_validation');
 		
 		$data['title'] = 'Login';
+		$data['css_list'] = "compiled/signin.css";
 		
 		$this->form_validation->set_rules('username','username','trim|required');
 		$this->form_validation->set_rules('passwd','password','trim|required|callback_valid_user_check');
@@ -97,7 +115,10 @@ class User extends CI_Controller{
 	}
 	public function success(){
 		$this->load->helper('url');
-		$this->load->view('template/tp_header');
+		
+		$data['css_list'] = "compiled/index.css";
+		
+		$this->load->view('template/tp_header',$data);
 		$this->load->view('template/tp_navbar');
 		$this->load->view('template/tp_sidebar');
 		$this->load->view('template/tp_main_container');
@@ -117,20 +138,24 @@ class User extends CI_Controller{
 		}
 		return TRUE;
 	}
-	/* public function display_user_list(){
+	public function display_user_list(){
 		$this->load->helper("url");
 		if($_SESSION['is_admin']!=="1"){
 			return;
 		}
 		
-		$data['menu_item']="6";
-		$data['user_list']=$this->user_model->get_user_list();
-		$data['js_list']= "add_user.js";
-		$this->load->view('templates/header',$data);
-		$this->load->view('templates/template');
-		$this->load->view('user/show_user_list',$data);
-		$this->load->view('templates/footer');
+		$data['title'] = 'Show user list';
+		$data['active_item']='user_list';
+		$data['css_list'] = "compiled/user-list.css";
+		
+		
+		$this->load->view('template/tp_header',$data);
+		$this->load->view('template/tp_navbar');
+		$this->load->view('template/tp_sidebar',$data);
+		$this->load->view('user/display_user');
+		$this->load->view('template/tp_footer');
 	}
+	/*
 	public function change_passwd(){
 		$this->load->helper('url');
 		$this->load->helper('form');
